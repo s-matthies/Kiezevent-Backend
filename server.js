@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config(); // dotenv einbinden um .env-Datei zu lesen und die Umgebungsvariablen zu setzen
 const routes = require('./routes');
+const initdb = require('./initdb');
 
 const app = express(); // Express-App erstellen
 const PORT = 4000; 
@@ -9,6 +10,7 @@ const PORT = 4000;
 app.use(express.json()); 
 app.use(cors());    
 app.use('/', routes); 
+app.use('/init', initdb);
 
 // listen on port 4000 
 app.listen(PORT, (error) => {
