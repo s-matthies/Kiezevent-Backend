@@ -177,6 +177,8 @@ dist
 !.vscode/extensions.json
 !.vscode/*.code-snippets
 
+package-lock.json
+
 # Local History for Visual Studio Code
 .history/
 
