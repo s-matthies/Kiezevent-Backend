@@ -6,6 +6,21 @@ router.get('/test', (req, res) => {
   res.send('KiezEvents API is running');
 });
 
+
+// get all events
+router.get('/events', async (req, res) => {
+    const query = 'SELECT * FROM events';
+    try {
+        const result = await client.query(query);
+        console.log(result);
+        res.status(200).json(result.rows); 
+    } catch (error) {
+        console.error(error.stack); 
+        res.status(500).json({ error: error });
+    }
+});
+
+
 // create a new event
 router.post('/events', async (req, res) => {
     let title = (req.body.title);
