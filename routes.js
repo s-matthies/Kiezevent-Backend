@@ -61,6 +61,47 @@ router.get('/events/:id', async (req, res) => {
 );
 
 
+// update one event by id
+router.put('/events/:id', async (req, res) => {
+    try{
+        const query = `SELECT * FROM events WHERE id = $1`;
+        const id = req.params.id;
+    
+        const result = await client.query(query, [id]);
+        if (result.rowCount > 0) {
+            let event = result.rows[0];
+            let title = req.body.title ? req.body.title : event.title;
+            let date = req.body.date ? req.body.date : event.date;
+            let starttime = req.body.starttime ? req.body.starttime : event.starttime;
+            let endtime = req.body.endtime ? req.body.endtime : event.endtime;
+            let location = req.body.location ? req.body.location : event.location;
+            let description = req.body.description ? req.body.description : event.description;
+            let link = req.body.link ? req.body.link : event.link;
+
+            const updateQuery = `UPDATE events SET 
+                title = $1, 
+                date = $2, 
+                starttime = $3, 
+                endtime = $4, 
+                location = $5, 
+                description = $6, 
+                link = $7 
+                WHERE id = $8 RETURNING *`;
+
+            const updateResult = await client.query(updateQuery, [title, date, starttime, endtime, location, description, link, id]);
+            console.log(updateResult);
+            res.status(200).json(updateResult.rows[0]);
+        } else {
+            res.status(404).json({ message: "No event found with id=" + id });
+        }
+    } catch (error) {
+        console.error(error.stack); 
+        res.status(500).json({ error: error });
+    }
+});
+
+
+
 // Router exportieren
 module.exports = router;
 
