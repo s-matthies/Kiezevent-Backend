@@ -15,7 +15,7 @@ router.get('/events', async (req, res) => {
         console.log(result);
         res.status(200).json(result.rows); 
     } catch (error) {
-        console.error(error.stack); 
+        console.log("error", err.stack); 
         res.status(500).json({ error: error });
     }
 });
@@ -42,6 +42,23 @@ router.post('/events', async (req, res) => {
     }
 });
 
+// get one event by id
+router.get('/events/:id', async (req, res) => {
+    const id = req.params.id;
+    const query = 'SELECT * FROM events WHERE id = $1';
+    try {
+        const result = await client.query(query, [id]);
+        console.log(result);
+        if (result.rowCount == 1)
+            res.status(200).json(result.rows[0]);
+        else
+            res.status(404).json({ message: "No event found with id=" + id });
+    } catch (error) {
+        console.log("error", err.stack);
+        res.status(500).json({ error: error });
+    }
+}
+);
 
 
 // Router exportieren
