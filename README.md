@@ -12,38 +12,38 @@ Dieses Projekt ist ein Backend-Server, der mit Node.js und Express.js erstellt w
 npm install
 ```
 
-3. Stellen Sie sicher, dass Sie eine PostgreSQL-Datenbank eingerichtet haben und die Verbindungsinformationen korrekt in der Datei `db.js` eingetragen sind.
+3. Stellen Sie sicher, dass Sie im HTW-Netz eingeloggt sind, um auf die POstgreSQL-Datenbank zuzugreifen.
 
 ## Verwendung
 
 Starten Sie den Server mit:
 
 ```bash
-npm start
+npm start run
 ```
 
-Der Server läuft standardmäßig auf Port 3000.
+Der Server läuft standardmäßig auf Port 4000.
 
 ## Endpunkte
 
-- `GET /`: Gibt alle Ereignisse zurück.
-- `GET /:id`: Gibt das Ereignis mit der angegebenen ID zurück.
-- `POST /`: Fügt ein neues Ereignis hinzu.
-- `PUT /:id`: Aktualisiert das Ereignis mit der angegebenen ID.
-- `DELETE /:id`: Löscht das Ereignis mit der angegebenen ID.
+- `GET /`: Gibt alle Veranstaltungen zurück.
+- `GET /:id`: Gibt die Veranstaltung mit der angegebenen ID zurück.
+- `POST /`: Fügt eine neue Veranstaltung hinzu.
+- `PUT /:id`: Aktualisiert die Veranstaltung mit der angegebenen ID.
+- `DELETE /:id`: Löscht die Veranstaltung mit der angegebenen ID.
 
 ## Datenbank
 
-Die Datenbank besteht aus einer Tabelle namens `events`. Jedes Ereignis hat die folgenden Felder:
+Die Datenbank besteht aus einer Tabelle namens `Events`. Jeder Ereignis hat die folgenden Felder:
 
 - `id`: Eine eindeutige ID.
-- `title`: Der Titel des Ereignisses.
-- `date`: Das Datum des Ereignisses.
-- `starttime`: Die Startzeit des Ereignisses.
-- `endtime`: Die Endzeit des Ereignisses.
-- `location`: Der Ort des Ereignisses.
-- `description`: Eine Beschreibung des Ereignisses.
-- `link`: Ein Link zu weiteren Informationen über das Ereignis.
+- `title`: Der Titel der Veranstaltung.
+- `date`: Das Datum der Veranstaltung.
+- `starttime`: Die Startzeit der Veranstaltung.
+- `endtime`: Die Endzeit der Veranstaltung.
+- `location`: Der Ort der Veranstaltung.
+- `dercription`: Eine Beschreibung der Veranstaltung.
+- `link`: Ein Link zu weiteren Informationen über die Veranstaltung (z.B.die Webseite der Veransatltung).
 
 ## Lizenz
 
