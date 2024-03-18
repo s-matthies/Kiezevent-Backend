@@ -20,16 +20,16 @@ Das Veranstaltungsverwaltungs-Backend ist eine RESTful API, die CRUD-Operationen
 
 Um das Backend auszuführen, müssen Sie Folgendes installieren:
 
-- Node.js (Version x.x.x)
+- Node.js (Version 20.10.0)
 - npm (Node Package Manager)
 
 ## Installation
 
 1. Klone das Repository auf deinen lokalen Computer:
-`git clone https://github.com/dein-benutzername/veranstaltungsverwaltung-backend.git`
+`git clone https://gitlab.rz.htw-berlin.de/Sabine.Matthies/kiezevent-backend.git`
 
 2. Wechsel in das Verzeichnis des Projekts:
-`cd veranstaltungsverwaltung-backend`
+`cd kiezevent-backend`
 
 3. Installiere die Abhängigkeiten:
 `npm install`
