@@ -1,50 +1,57 @@
-# Mein Backend-Projekt
+# Veranstaltungsverwaltungs-Backend
 
-Dieses Projekt ist ein Backend-Server, der mit Node.js und Express.js erstellt wurde. Es verwendet PostgreSQL als Datenbank.
+Dies ist das Backend für die Veranstaltungsverwaltungsanwendung, das mit Node.js und Express entwickelt wurde.
+
+## Inhaltsverzeichnis
+
+1. [Übersicht](#übersicht)
+2. [Anforderungen](#anforderungen)
+3. [Installation](#installation)
+4. [Verwendung](#verwendung)
+5. [API-Endpunkte](#api-endpunkte)
+6. [Beitrag](#beitrag)
+7. [Lizenz](#lizenz)
+
+## Übersicht
+
+Das Veranstaltungsverwaltungs-Backend ist eine RESTful API, die CRUD-Operationen für Veranstaltungen ermöglicht. Es wurde entwickelt, um mit einer Datenbank zu interagieren und Veranstaltungsdaten zu speichern, abzurufen, zu aktualisieren und zu löschen.
+
+## Anforderungen
+
+Um das Backend auszuführen, müssen Sie Folgendes installieren:
+
+- Node.js (Version x.x.x)
+- npm (Node Package Manager)
 
 ## Installation
 
-1. Stellen Sie sicher, dass Sie [Node.js](https://nodejs.org/) und npm installiert haben.
+1. Klone das Repository auf deinen lokalen Computer:
+`git clone https://github.com/dein-benutzername/veranstaltungsverwaltung-backend.git`
 
-2. Installieren Sie die Abhängigkeiten:
+2. Wechsel in das Verzeichnis des Projekts:
+`cd veranstaltungsverwaltung-backend`
 
-```bash
-npm install
-```
-
-3. Stellen Sie sicher, dass Sie im HTW-Netz eingeloggt sind, um auf die POstgreSQL-Datenbank zuzugreifen.
+3. Installiere die Abhängigkeiten:
+`npm install`
 
 ## Verwendung
 
-Starten Sie den Server mit:
+Starte den Server mit dem Befehl:
+`npm start`
 
-```bash
-npm start run
-```
+Der Server läuft standardmäßig auf Port 4000 (konfigurierbar in der Datei `index.js`).
 
-Der Server läuft standardmäßig auf Port 4000.
+## API-Endpunkte
 
-## Endpunkte
+Das Backend bietet folgende API-Endpunkte:
 
-- `GET /`: Gibt alle Veranstaltungen zurück.
-- `GET /:id`: Gibt die Veranstaltung mit der angegebenen ID zurück.
-- `POST /`: Fügt eine neue Veranstaltung hinzu.
-- `PUT /:id`: Aktualisiert die Veranstaltung mit der angegebenen ID.
-- `DELETE /:id`: Löscht die Veranstaltung mit der angegebenen ID.
-
-## Datenbank
-
-Die Datenbank besteht aus einer Tabelle namens `Events`. Jeder Ereignis hat die folgenden Felder:
-
-- `id`: Eine eindeutige ID.
-- `title`: Der Titel der Veranstaltung.
-- `date`: Das Datum der Veranstaltung.
-- `starttime`: Die Startzeit der Veranstaltung.
-- `endtime`: Die Endzeit der Veranstaltung.
-- `location`: Der Ort der Veranstaltung.
-- `dercription`: Eine Beschreibung der Veranstaltung.
-- `link`: Ein Link zu weiteren Informationen über die Veranstaltung (z.B.die Webseite der Veransatltung).
+- GET `/events`: Ruft alle Veranstaltungen ab.
+- POST `/events`: Erstellt eine neue Veranstaltung.
+- GET `/events/:id`: Ruft eine einzelne Veranstaltung anhand ihrer ID ab.
+- PUT `/events/:id`: Aktualisiert eine Veranstaltung.
+- DELETE `/events/:id`: Löscht eine Veranstaltung.
 
 ## Lizenz
 
-Dieses Projekt steht unter der MIT-Lizenz.
+Dieses Projekt ist unter der [MIT-Lizenz](https://opensource.org/licenses/MIT) lizenziert.
+
