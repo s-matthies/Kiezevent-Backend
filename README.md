@@ -1,6 +1,6 @@
-# Veranstaltungsverwaltungs-Backend
+# KiezEVent-Backend
 
-Dies ist das Backend für die Veranstaltungsverwaltungsanwendung, das mit Node.js und Express entwickelt wurde.
+Dies ist das Backend für die Verwaltung von Veranstaltungen im Kiez ("KiezEvents"), das mit Node.js und Express entwickelt wurde.
 
 ## Inhaltsverzeichnis
 
@@ -22,6 +22,7 @@ Um das Backend auszuführen, müssen Sie Folgendes installieren:
 
 - Node.js (Version 20.10.0)
 - npm (Node Package Manager)
+- Zugang zum HTW-Netzwerk für die Verbindung mit der PostgreSQL-Datenbank
 
 ## Installation
 
