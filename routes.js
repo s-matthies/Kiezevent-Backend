@@ -3,8 +3,21 @@ const router = express.Router(); // Express-Router-Modul einbinden
 const client = require('./db'); // Importieren des Datenbank-Clients
 
 
-
 // get all events
+/**
+ * @swagger
+ * /api/events:
+ *  get:
+ *    summary: Get all events
+ *    description: Get all events
+ *    tags:
+ *    - Events
+ *    responses:
+ *      '200': 
+ *        description: A list of events
+ *     '500':
+ *       description: Internal server error
+ */
 router.get('/events', async (req, res) => {
     const query = 'SELECT * FROM events';
     try {
