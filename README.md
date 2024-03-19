@@ -9,7 +9,7 @@ Dies ist das Backend für die Verwaltung von Veranstaltungen im Kiez ("KiezEvent
 3. [Installation](#installation)
 4. [Verwendung](#verwendung)
 5. [API-Endpunkte](#api-endpunkte)
-6. [Beitrag](#beitrag)
+6. [API Dokumentation](#api-dokumentation)
 7. [Lizenz](#lizenz)
 
 ## Übersicht
