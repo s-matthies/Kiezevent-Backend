@@ -52,6 +52,14 @@ Das Backend bietet folgende API-Endpunkte:
 - PUT `/events/:id`: Aktualisiert eine Veranstaltung.
 - DELETE `/events/:id`: Löscht eine Veranstaltung.
 
+## API-Dokumentation
+
+Die API-Dokumentation für dieses Projekt kann über die folgende URL erreicht werden:
+
+[Swagger UI](http://example.com/swagger-ui)
+
+Stellen Sie sicher, dass Ihre Anwendung läuft, bevor Sie auf den obigen Link klicken.
+
 ## Lizenz
 
 Dieses Projekt ist unter der [MIT-Lizenz](https://opensource.org/licenses/MIT) lizenziert.
