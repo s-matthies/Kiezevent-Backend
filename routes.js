@@ -3,8 +3,67 @@ const router = express.Router(); // Express-Router-Modul einbinden
 const client = require('./db'); // Importieren des Datenbank-Clients
 
 
+// Swagger-Dokumentation
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Event:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: integer
+ *           description: The unique identifier of the event
+ *         title:
+ *           type: string
+ *           description: The title of the event
+ *         date:
+ *           type: Date
+ *           description: The date of the event
+ *         starttime:
+ *           type: Time
+ *           description: The start time of the event
+ *         endtime:
+ *           type: Time
+ *           description: The end time of the event
+ *         location:
+ *           type: string
+ *           description: The location of the event
+ *         description:
+ *           type: string
+ *           description: The description of the event
+ *         link:
+ *           type: string
+ *           format: uri
+ *           description: The link related to the event
+ */
 
 // get all events
+/**
+ * @swagger
+ * /events:
+ *   get:
+ *     summary: Get all events
+ *     description: Retrieves all events
+ *     responses:
+ *       '200':
+ *         description: Successful request. List of events returned.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Event'
+ *       '500':
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ */
 router.get('/events', async (req, res) => {
     const query = 'SELECT * FROM events';
     try {
@@ -19,6 +78,58 @@ router.get('/events', async (req, res) => {
 
 
 // create a new event
+/**
+ * @swagger
+ * /events:
+ *   post:
+ *     summary: Create a new event
+ *     description: Creates a new event with the provided details
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *                 description: The title of the event
+ *               date:
+ *                 type: Date
+ *                 description: The date of the event
+ *               starttime:
+ *                 type: Time
+ *                 description: The start time of the event
+ *               endtime:
+ *                 type: Time
+ *                 description: The end time of the event
+ *               location:
+ *                 type: string
+ *                 description: The location of the event
+ *               description:
+ *                 type: string
+ *                 description: The description of the event
+ *               link:
+ *                 type: string
+ *                 format: uri
+ *                 description: The link related to the event
+ *     responses:
+ *       '201':
+ *         description: Event created successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Event'
+ *       '500':
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ */
 router.post('/events', async (req, res) => {
     let title = (req.body.title);
     let date = (req.body.date);
@@ -39,7 +150,48 @@ router.post('/events', async (req, res) => {
     }
 });
 
+
 // get one event by id
+/**
+ * @swagger
+ * /events/{id}:
+ *   get:
+ *     summary: Get one event by ID
+ *     description: Retrieves an event by its ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID of the event to retrieve
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       '200':
+ *         description: Successful request. Event retrieved.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Event'
+ *       '404':
+ *         description: Event not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: No event found with id=1
+ *       '500':
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ */
 router.get('/events/:id', async (req, res) => {
     const id = req.params.id;
     const query = 'SELECT * FROM events WHERE id = $1';
@@ -58,7 +210,76 @@ router.get('/events/:id', async (req, res) => {
 );
 
 
-// update one event by id
+// update one event by 
+/**
+ * @swagger
+ * /events/{id}:
+ *   put:
+ *     summary: Update an event by ID
+ *     description: Updates an existing event with the provided details
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID of the event to update
+ *         schema:
+ *           type: integer
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *                 description: The updated title of the event
+ *               date:
+ *                 type: Date
+ *                 description: The updated date of the event
+ *               starttime:
+ *                 type: Time
+ *                 description: The updated start time of the event
+ *               endtime:
+ *                 type: Time
+ *                 description: The updated end time of the event
+ *               location:
+ *                 type: string
+ *                 description: The updated location of the event
+ *               description:
+ *                 type: string
+ *                 description: The updated description of the event
+ *               link:
+ *                 type: string
+ *                 format: uri
+ *                 description: The updated link related to the event
+ *     responses:
+ *       '200':
+ *         description: Event updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Event'
+ *       '404':
+ *         description: Event not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: No event found with id=1
+ *       '500':
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ */
 router.put('/events/:id', async (req, res) => {
     try{
         const query = `SELECT * FROM events WHERE id = $1`;
@@ -100,6 +321,50 @@ router.put('/events/:id', async (req, res) => {
 
 
 // delete one event by id
+/**
+ * @swagger
+ * /events/{id}:
+ *   delete:
+ *     summary: Delete an event by ID
+ *     description: Deletes an event with the provided ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID of the event to delete
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       '200':
+ *         description: Event deleted successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Event with id=1 deleted successfully.
+ *       '404':
+ *         description: Event not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: No event found with id=1
+ *       '500':
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ */
 router.delete('/events/:id', async (req, res) => {
     const id = req.params.id;
     const query = 'DELETE FROM events WHERE id = $1';
@@ -116,7 +381,6 @@ router.delete('/events/:id', async (req, res) => {
     }
 }
 );
-
 
 
 // Router exportieren
