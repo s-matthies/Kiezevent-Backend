@@ -181,7 +181,7 @@ router.post('/events', async (req, res) => {
  *               properties:
  *                 message:
  *                   type: string
- *                   example: No event found with the given ID
+ *                   example: No event found with id=1
  *       '500':
  *         description: Internal server error
  *         content:
@@ -269,7 +269,7 @@ router.get('/events/:id', async (req, res) => {
  *               properties:
  *                 message:
  *                   type: string
- *                   example: No event found with the given ID
+ *                   example: No event found with id=1
  *       '500':
  *         description: Internal server error
  *         content:
@@ -354,7 +354,7 @@ router.put('/events/:id', async (req, res) => {
  *               properties:
  *                 message:
  *                   type: string
- *                   example: No event found with the given ID
+ *                   example: No event found with id=1
  *       '500':
  *         description: Internal server error
  *         content:
