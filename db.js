@@ -7,9 +7,7 @@ const client = new pg.Client({
     host: process.env.PGHOST,
     database: process.env.PGDATABASE,
     password: process.env.PGPASSWORD,
-    port: process.env.PGPORT,
-    database_url: process.env.DATABASE_URL
-
+    port: process.env.PGPORT
 });
 
 // Verbindung zur Datenbank herstellen
