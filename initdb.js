@@ -3,9 +3,9 @@ const client = require('./db');
 const initdb = express.Router();
 const format = require('pg-format');
 
-/*
+
 initdb.get('/initdb', async (req, res) => {
-    const query = format('CREATE TABLE IF NOT EXISTS events (id SERIAL PRIMARY KEY, title VARCHAR(255), date DATE, starttime TIME, endtime TIME, location VARCHAR(255), description TEXT, link VARCHAR(255))');
+    const query = format('CREATE TABLE IF NOT EXISTS events (id SERIAL PRIMARY KEY, title VARCHAR(255) NOT NULL, date DATE, starttime TIME, endtime TIME, location VARCHAR(255), description VARCHAR(800), link VARCHAR(255))');
     try {
         const result = await client.query(query);
         console.log(result);
@@ -15,20 +15,23 @@ initdb.get('/initdb', async (req, res) => {
         res.status(500).json({ error: error });
     }
 });
-*/
+
+
 
 // Befüllen der Tabelle events 
 initdb.get('/', async (req, res) => {
     
     const sampleEvents = [
         {
-          title: "Yoga im Kiezladen",
+          title: "Fahrrad-Werkstatt",
           date: "2024-04-15",
-          starttime: "10:00:00",
-          endtime: "11:30:00",
+          starttime: "16:00:00",
+          endtime: "19:00:00",
           location: "Kiezladen, Berlin",
-          description: "Entspannen Sie sich und tanken Sie neue Energie bei unserer Yoga-Stunde. Keine Vorkenntnisse erforderlich. Bitte bringen Sie eine eigene Matte mit.",
-          link: "http://example.com/yoga"
+          description: "Platten? Licht geht nicht mehr? Schaltung ist kaputt? Und du möchtest lernen, dein Rad selbst zu reparieren?" + 
+          "Dann komm vorbei ..." +
+          "Gebrauchte Ersatzteile aller Art gibt es günstig vor Ort.",
+          link: "http://example.com/fahrradwerksatt"
         },
         {
           title: "KüfA - Küche für Alle",
@@ -99,7 +102,7 @@ initdb.get('/', async (req, res) => {
           starttime: "16:00:00",
           endtime: "22:00:00",
           location: "Kiezplatz, Berlin",
-          description: "Erleben Sie die festliche Atmosphäre auf unserem traditionellen Weihnachtsmarkt. Glühwein, Leckereien und Handwerkskunst warten auf Sie.",
+          description: "Erlebe die gemütliche Atmosphäre auf unserem alljährigen Kiez-Weihnachtsmarkt. Es gibt Glühwein, Leckereien und Handwerkskunst und viele andere tolle Sachen.",
           link: "http://example.com/christmasmarket"
         },
         {
