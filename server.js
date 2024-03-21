@@ -11,6 +11,7 @@ const app = express(); // Express-App erstellen
 const PORT = 4000; 
 
 app.use(cors());
+app.use(express.json());
 
 const swaggerOptions = {
     definition: {
@@ -33,10 +34,6 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use('/', routes);
-
-app.use(express.json()); 
-app.use(cors());    
-app.use('/', routes); 
 app.use('/init', initdb);
 
 // listen on port 4000 
