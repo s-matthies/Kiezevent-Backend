@@ -4,7 +4,7 @@ const initdb = express.Router();
 const format = require('pg-format');
 
 
-initdb.get('/initdb', async (req, res) => {
+initdb.get('/', async (req, res) => {
     const query = format('CREATE TABLE IF NOT EXISTS events (id SERIAL PRIMARY KEY, title VARCHAR(255) NOT NULL, date DATE, starttime TIME, endtime TIME, location VARCHAR(255), description VARCHAR(800), link VARCHAR(255))');
     try {
         const result = await client.query(query);
