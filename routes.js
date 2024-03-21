@@ -131,6 +131,11 @@ router.get('/events', async (req, res) => {
  *                   type: string
  */
 router.post('/events', async (req, res) => {
+    // Überprüfen, ob die erforderlichen Felder ausgefüllt wurden
+    if (!req.body || !req.body.title || !req.body.date || !req.body.location) {
+        return res.status(400).json({ error: 'title, date, and location are required fields' });
+    }
+
     let title = (req.body.title);
     let date = (req.body.date);
     let starttime = (req.body.starttime) ? req.body.starttime : null;
