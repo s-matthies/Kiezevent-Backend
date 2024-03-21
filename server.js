@@ -11,7 +11,7 @@ const app = express(); // Express-App erstellen
 const PORT = 4000; 
 
 app.use(cors());
-app.use(express.json()); /
+app.use(express.json()); 
 
 const swaggerOptions = {
     definition: {
