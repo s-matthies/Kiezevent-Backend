@@ -56,7 +56,7 @@ Das Backend bietet folgende API-Endpunkte:
 
 Die API-Dokumentation für dieses Projekt kann über die folgende URL erreicht werden:
 
-[Swagger UI](http://localhost:4000/api-docs/)
+[Swagger UI](https://kiezevent-backend.onrender.com/api-docs/)
 
 Stellen Sie sicher, dass Ihre Anwendung läuft, bevor Sie auf den obigen Link klicken.
 
