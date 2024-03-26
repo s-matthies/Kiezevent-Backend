@@ -59,7 +59,4 @@ Die API-Dokumentation für dieses Projekt kann über die folgende URL erreicht w
 
 Stellen Sie sicher, dass Ihre Anwendung läuft, bevor Sie auf den obigen Link klicken.
 
-## Lizenz
-
-Dieses Projekt ist unter der [MIT-Lizenz](https://opensource.org/licenses/MIT) lizenziert.
 
