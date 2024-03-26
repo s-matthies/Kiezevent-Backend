@@ -1,4 +1,4 @@
-# KiezEVent-Backend
+# KiezEvent-Backend
 
 Dies ist das Backend für die Verwaltung von Veranstaltungen im Kiez ("KiezEvents"), das mit Node.js und Express entwickelt wurde.
 
@@ -22,12 +22,11 @@ Um das Backend auszuführen, müssen Sie Folgendes installieren:
 
 - Node.js (Version 20.10.0)
 - npm (Node Package Manager)
-- Zugang zum HTW-Netzwerk für die Verbindung mit der PostgreSQL-Datenbank
-
+- 
 ## Installation
 
 1. Klone das Repository auf deinen lokalen Computer:
-`git clone https://gitlab.rz.htw-berlin.de/Sabine.Matthies/kiezevent-backend.git`
+`git clone https://github.com/s-matthies/Kiezevent-Backend.git`
 
 2. Wechsel in das Verzeichnis des Projekts:
 `cd kiezevent-backend`
