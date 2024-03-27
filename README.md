@@ -10,11 +10,10 @@ Dies ist das Backend für die Verwaltung von Veranstaltungen im Kiez ("KiezEvent
 4. [Verwendung](#verwendung)
 5. [API-Endpunkte](#api-endpunkte)
 6. [API Dokumentation](#api-dokumentation)
-7. [Lizenz](#lizenz)
 
 ## Übersicht
 
-Das Veranstaltungsverwaltungs-Backend ist eine RESTful API, die CRUD-Operationen für Veranstaltungen ermöglicht. Es wurde entwickelt, um mit einer Datenbank zu interagieren und Veranstaltungsdaten zu speichern, abzurufen, zu aktualisieren und zu löschen.
+Das KiezEvent-Backend ist eine RESTful API, die CRUD-Operationen für Veranstaltungen ermöglicht. Es interagiert mit einer PostgreSQL-Datenbank, um Veranstaltungsdaten zu speichern, abzurufen, zu aktualisieren und zu löschen.
 
 ## Anforderungen
 
@@ -22,13 +21,13 @@ Um das Backend auszuführen, müssen Sie Folgendes installieren:
 
 - Node.js (Version 20.10.0)
 - npm (Node Package Manager)
-- 
+  
 ## Installation
 
 1. Klone das Repository auf deinen lokalen Computer:
 `git clone https://github.com/s-matthies/Kiezevent-Backend.git`
 
-2. Wechsel in das Verzeichnis des Projekts:
+2. Wechsele in das Verzeichnis des Projekts:
 `cd kiezevent-backend`
 
 3. Installiere die Abhängigkeiten:
