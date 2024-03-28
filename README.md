@@ -17,7 +17,7 @@ Das KiezEvent-Backend ist eine RESTful API, die CRUD-Operationen für Veranstalt
 
 ## Anforderungen
 
-Um das Backend auszuführen, müssen Sie Folgendes installieren:
+Um das Backend auszuführen, muss Folgendes installiert werden:
 
 - Node.js (Version 20.10.0)
 - npm (Node Package Manager)
@@ -25,13 +25,16 @@ Um das Backend auszuführen, müssen Sie Folgendes installieren:
 ## Installation
 
 1. Klone das Repository auf deinen lokalen Computer:
-`git clone https://github.com/s-matthies/Kiezevent-Backend.git`
+   
+    `git clone https://github.com/s-matthies/Kiezevent-Backend.git`
 
-2. Wechsele in das Verzeichnis des Projekts:
-`cd kiezevent-backend`
+3. Wechsele in das Verzeichnis des Projekts:
 
-3. Installiere die Abhängigkeiten:
-`npm install`
+    `cd kiezevent-backend`
+
+4. Installiere die Abhängigkeiten:
+
+    `npm install`
 
 ## Verwendung
 
@@ -53,9 +56,8 @@ Das Backend bietet folgende API-Endpunkte:
 ## API-Dokumentation
 
 Die API-Dokumentation für dieses Projekt kann über die folgende URL erreicht werden:
-
 [Swagger UI](https://kiezevent-backend.onrender.com/api-docs/)
 
-Stellen Sie sicher, dass Ihre Anwendung läuft, bevor Sie auf den obigen Link klicken.
+Dafür ist es notwendig, dass die Anwendung läuft, bevor auf den obigen Link geklickt wird.
 
 
